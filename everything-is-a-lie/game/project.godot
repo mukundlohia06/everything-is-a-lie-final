@@ -1,0 +1,24 @@
+; Engine configuration file.
+; Minimal starter for Godot 4.7.x (authoritative version: 4.7.2, see docs/DESIGN_DECISIONS.md DD-001).
+; Godot rewrites this file when the project is opened and saved.
+; No main scene, autoloads or input actions are defined yet; they are added by Phase 1 tasks
+; (docs/TASK_BREAKDOWN.md: T-P1-03, T-P1-05, T-P1-10).
+
+config_version=5
+
+[application]
+
+config/name="Everything Is A Lie"
+config/description="First-person psychological puzzle game in which the game itself deceives the player."
+config/features=PackedStringArray("4.7", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[rendering]
+
+renderer/rendering_method="forward_plus"

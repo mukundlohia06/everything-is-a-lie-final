@@ -1,0 +1,16 @@
+Copyright (c) 2026 [PROJECT OWNER]. All rights reserved.
+
+LICENSE DECISION PENDING.
+
+This repository contains the source code, documentation and assets of the game
+"EVERYTHING IS A LIE". Until a licence is chosen, no permission is granted to
+copy, modify, distribute or use any part of it without the written permission
+of the copyright holder.
+
+Third-party components (fonts, audio, textures, addons) remain under their own
+licences and must be listed in ASSETS_LICENSES.csv before they are committed.
+
+BEFORE MAKING THIS REPOSITORY PUBLIC:
+  1. Replace [PROJECT OWNER] with the legal owner of the project.
+  2. Decide on a licence (code, assets and documentation may use different ones)
+     and replace this file.

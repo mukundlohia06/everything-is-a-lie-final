@@ -1,0 +1,28 @@
+# --- Godot (the Godot project root is game/) ---
+.godot/
+export_credentials.cfg
+
+# --- Local environment / secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Build output (distributables go to GitHub Releases / store depots, not Git) ---
+build/
+builds/*
+!builds/.gitkeep
+
+# --- Temporary / logs ---
+*.tmp
+*.log
+
+# --- Editors and OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Python tooling (tools/) ---
+__pycache__/
+*.pyc
+.venv/

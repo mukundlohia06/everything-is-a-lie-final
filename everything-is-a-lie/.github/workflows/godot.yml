@@ -1,0 +1,39 @@
+name: godot
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  # Single authoritative engine version (docs/DESIGN_DECISIONS.md DD-001).
+  # Keep in sync with game/project.godot (config/features), README.md and docs/TECHNICAL_ARCHITECTURE.md.
+  GODOT_VERSION: "4.7.2"
+
+jobs:
+  import-check:
+    name: Import project (Godot 4.7.2)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: chickensoft-games/setup-godot@v2
+        with:
+          version: ${{ env.GODOT_VERSION }}
+          use-dotnet: false
+
+      # Verifies that the project folder (game/) opens and imports without errors.
+      - name: Import project headlessly
+        run: godot --headless --path game --import
+
+  # NOT YET ENABLED — add when the corresponding tooling exists:
+  #
+  # tests:           # needs a test framework in game/addons/ (gdUnit4 or GUT) and tests in game/tests/
+  # truth-lint:      # needs res://scripts/utilities/lint/truth_lint.gd (docs/TRUTH_LIE_SYSTEM.md §11)
+  # export-windows:  # needs game/export_presets.cfg and export templates (docs/BUILD_AND_RELEASE.md)
